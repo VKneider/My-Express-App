@@ -28,6 +28,12 @@ router.post("/loginUser", (req, res) => {
   }
 });
 
+router.post("/logout", (req, res) => {
+  req.session.destroy();
+  res.send({ message: false });
+});
+
+
 router.get("/home", Loginscreen);
 
 export default router;
